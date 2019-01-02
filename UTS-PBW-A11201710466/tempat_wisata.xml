@@ -1,0 +1,33 @@
+<tempat_wisata>
+    <wisata>
+        <tempat>Museum Angkut</tempat>
+        <weekdays>50.000</weekdays>
+        <weekend>75.000</weekend>
+    </wisata>
+    <wisata>
+        <tempat>Eco Green Park</tempat>
+        <weekdays>40.000</weekdays>
+        <weekend>60.000</weekend>
+    </wisata>
+    <wisata>
+        <tempat>Jatim Park 1</tempat>
+        <weekdays>60.000</weekdays>
+        <weekend>80.000</weekend>
+    </wisata>
+    <wisata>
+        <tempat>Batu Secret Zoo (Jatim Park 2)</tempat>
+        <weekdays>75.000</weekdays>
+        <weekend>105.000</weekend>
+    </wisata>
+    <wisata>
+        <tempat>Museum Satwa (Jatim Park 2)</tempat>
+        <weekdays>20.000</weekdays>
+        <weekend>20.000</weekend>
+    </wisata>
+    <wisata>
+        <tempat>Batu Night Spectacular</tempat>
+        <weekdays>20.000</weekdays>
+        <weekend>30.000</weekend>
+    </wisata>
+
+</tempat_wisata>

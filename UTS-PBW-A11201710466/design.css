@@ -1,0 +1,225 @@
+img {
+    align-items: center;
+	width: 100px;
+	height: 100px;
+	padding : 4px;
+}
+
+body {
+	background: #dedede;
+	font-family: 'Helvetica', arial, sans-serif;
+	font-size: 15px;
+}
+
+p{
+	text-align: center;
+	margin-bottom: 20px;
+	line-height: 1.5em;
+}
+h3{
+	text-align: center;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ff8300;
+}
+
+P{
+	font-size: 15px;
+	text-align: justify;
+	font-family: calibri;
+}
+
+a{
+	text-decoration: none;
+	color: #ff8300;
+}
+a:hover{
+	color: #ff8300;
+}
+
+
+.container{
+	display: grid;
+	grid-gap: 1px;
+	grid-template-rows: 150px auto auto;
+	grid-template-columns: repeat(5, 1fr);
+	max-width: 1080px;
+	margin: 20px auto;
+	background: #fff;
+	overflow: hidden;
+	padding: 10px;
+}
+
+
+.header{
+	grid-column: 1/6;
+	background: #023561;
+	color: white;
+	border: 1px solid #ff8300;
+}
+
+/* Main */
+.main{
+	grid-column: 1/6;
+	background: #023561;
+	display: flex;
+	border:1px solid #ff8300;
+	flex-direction: row;/*ada row ada column*/
+	justify-content:flex-start;/*ada flex-end ada flex-start ada flex-center*/
+}
+
+	.left{
+		width: 850px;
+		color: white;
+		border: 1px solid #ff8300;
+		background: #93352d;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+	}
+
+	.middle{
+		color: white;
+		width: 900px;
+		background: #93352d;
+		border: 1px solid #ff8300;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+	}
+		.middle img{
+			max-width: 100%;
+			height: auto;
+		}
+
+		.middle a{
+			font-weight: bold;
+		}
+
+	.right{
+		width: 700px;
+		background: white;
+		border: 1px solid #ff8300;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+	}
+
+	.right ul{
+		list-style-type: none;
+	}
+	.right ul li{
+		display: block;
+	}
+	.right ul li a{
+		display: block;
+		border-bottom: 1px solid #dedede;
+		margin-bottom: 10px;
+		padding: 10px 5px;
+	}
+	.right ul li a:hover{
+		color: orange;
+	}
+
+
+	.footer{
+	grid-column: 1/6;
+	background: #023561;
+	display: grid;
+	border: 1px solid #023561;
+	padding: 10px;
+	margin: 10px;
+}
+.left1{
+	grid-column: 1/2;
+	text-align: right;
+	border: 1px solid #023561;
+	margin: 10px;
+}
+
+.mid1{
+	grid-column: 2/4;
+	color: white;
+	border: 1px solid #023561;
+	margin: 10px;
+}
+
+.right1{
+	grid-column: 4/6;
+	color: white;
+	border: 1px solid #023561;
+	margin: 10px;
+}
+
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* untuk ukuran 1080px kebawah */
+@media screen and (max-width: 1080px) {
+	.header ,.footer{
+		text-align: center;
+	}
+	.main{
+		display: grid;
+		grid-gap: 1px;
+		grid-template-rows: auto auto;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.left {
+		color: black;
+		grid-column: 1/2;
+		max-width: 450px;
+		background: yellow;
+		border: 1px solid #ff8300;
+	}
+	.middle {
+		grid-column:2/3;
+		max-width: 450px;
+		float: left;
+	}
+	
+	.right {
+		grid-column:1/-1;
+		background: white;
+	}
+}
+
+
+/* untuk ukuran layar 700px kebawah */
+@media screen and (max-width: 780px) {
+	
+	.header, .footer{
+		text-align: center;
+	}
+	.main{
+		display: grid;
+		grid-gap: 1px;
+		grid-template-rows: auto auto;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.left {
+		background: greenyellow;
+		max-width: 700px;
+		grid-column: 1/-1;
+		width: auto;
+		float: none;
+	}
+	
+	.middle {
+		color: black;
+		background: greenyellow;
+		grid-column: 1/-1;
+		max-width: 700px;
+		width: auto;
+		float: none;
+	}
+	
+	.right {
+		background: white;
+		grid-column: 1/-1;
+		width: auto;
+		float: none;
+	}
+
+}

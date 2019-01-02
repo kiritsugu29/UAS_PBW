@@ -1,0 +1,124 @@
+<html>
+    <Head>
+    <link rel="stylesheet" href="design.css">
+    <script type="text/javascript" src="jalan_jalan.js"></script>
+    <style>
+        div {
+        text-align: center;
+        font-family: calibri;
+        color: darkgoldenrod;
+        border: 3px solid darkgoldenrod ;
+        width: 650px;
+        background-color:#023561;
+        }
+        p {
+            text-align: center;
+        }
+        .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 12px;
+        padding: 10px;
+        width: 150px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        }
+
+        .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        }
+
+        .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+        }
+
+        .button:hover span {
+        padding-right: 25px;
+        }
+
+        .button:hover span:after {
+        opacity: 1;
+        right: 0;
+        }
+    </style>
+    </Head>
+    <body>
+        <center>
+
+            <h3>Tempat Tempat Wisata di Malang</h3>
+            <button class="button" style="vertical-align:middle" onclick="loadDoc()"><span>Tempat Wisata</span></button>
+            <br><br>
+            <div id="demo"></div>
+            <div>
+            <script>
+                console.log("Dokumentasi Console LOG ! ");
+                console.time("Waktu Eksekusi");
+                function loadDoc() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this);
+                        }
+                    };
+                    xhttp.open("GET", "tempat_wisata.xml", true);
+                    xhttp.send();
+                }
+                function myFunction(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var tmpt="";
+                var x = xmlDoc.getElementsByTagName("wisata");
+                for (i = 0; i <x.length; i++) { 
+                    var n=i+1;
+                    tmpt += "<br>"+"<b>"+n+". "+
+                    x[i].getElementsByTagName("tempat")[0].childNodes[0].nodeValue + "</b>" +
+                    "<br>Lokasi : " +
+                    x[i].getElementsByTagName("tempat")[0].childNodes[0].nodeValue + "<Br>" +
+                    "Harga tiket (Weekdays) : " +
+                    x[i].getElementsByTagName("weekdays")[0].childNodes[0].nodeValue + "<Br>" +
+                    "Harga tiket (Weekend)  : " +
+                    x[i].getElementsByTagName("weekend")[0].childNodes[0].nodeValue + "<Br><BR>" ;
+                }
+                document.getElementById("demo").innerHTML = tmpt;
+                }
+                console.timeEnd("Waktu Eksekusi");
+            </script>
+            </div>
+            <h3>Tempat Makan rekomendasi</h3>
+            <div>
+                <BR><BR><BR>
+            <form>
+                <select id="menu" size="5"  onchange="select()" multiple="multiple">
+                    <option value="Bakso President yang sudah berdiri sejak 1977. Kedai bakso ini berada di Jalan Batanghari No 5, letaknya persis di samping rel kereta api Ada banyak variasi bakso yang dapat dicoba disana">Bakso President</option>
+                    <option value="Warung ini sudah berdiri sejak tahun 1980-an, dan terletak pada Jalan Kauman, keunikan di warung ini ada padapenyebutan nama makanannya yang kekinian banget">Warung Bu Haji AREMA</option>
+                    <option value="Ketan Legenda ini berada di jl. KH Agus Salim, Junrejo-Batu. Tempat ini sangat cocok untuk tongkrongananak-anak muda, selain harganya yang terjangkau, varian ketannya juga banyak, karena terletak di daerah Batu,tempatnya sejuk">Ketan Legenda Batu</option>
+                    <option value="Buat yang suka challange makan banyak. Disini tempat yang tepat, karena di Kedai 27 inianda dapat memesan Burger Buto dengan diameter burgernya sebesar 30cm, Kedai 27 terletak di Jl. sarangan 27 Lokowaru">Burger Buto Kedai 27</option>
+                    <option value="Dari namanya saja sudah menakutkan bukan ?? Tidak salah lagi Mie IBLIS ini menjual aneka Mie dengan rasa pedas yang bervariasi, selain itu IBLIS juga merupakan singkatan dari Ini Baru Lezat dan IStimewa, Mie IBLIS terletak di Jl. Kol. Sugiono no 122">Mie IBLIS Malang</option>
+                </select><br><br>
+                <p>Info:</p>
+                <textarea name="teksInfo" id="keterangan" rows="6" cols="50">
+                </textarea>
+            </form>
+            <BR><BR>
+            <button class="button" style="vertical-align:middle" onclick="fungsi_saya()"><span>Console Trace</span></button>
+            <button class="button" style="vertical-align:middle" onclick="window.location.href='index.html'"><span>Back</span></button>
+            
+            <BR><BR><BR><BR>
+        </div>
+        </center>	
+
+    </bodY>
+    </html>
